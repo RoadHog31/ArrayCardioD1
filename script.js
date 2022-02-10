@@ -48,26 +48,40 @@ return value.first + " " + value.last;
 console.log(inventorfirstandlastnames);
 
 
-    // Array.prototype.sort()
-    // 3. Sort the inventors by birthdate, oldest to youngest
-    // const ordered = inventors.sort(function(a, b) {
-    //   if(a.year > b.year) {
-    //     return 1;
-    //   } else {
-    //     return -1;
-    //   }
-    // });
-
+// Array.prototype.sort()
+// 3. Sort the inventors by birthdate, oldest to youngest
+// const ordered = inventors.sort(function(a, b) {
+//   if(a.year > b.year) {
+//     return 1;
+//   } else {
+//     return -1;
+//   }
+// });
+const inventorsbyage = inventors.sort(function (a, b) { return a.year - b.year });
+console.log(inventorsbyage);
    
 
-    // Array.prototype.reduce()
-    // 4. How many years did all the inventors live?
-  
+// Array.prototype.reduce()
+// 4. How many years did all the inventors live?
+const inventorsyearslived = inventors.reduce(myFunc, 0); 
 
-   
+function myFunc(total, inventors) {
+  return total + (inventors.passed - inventors.year);
+}
 
-    // 5. Sort the inventors by years lived
- 
+console.log(inventorsyearslived);
+
+// 5. Sort the inventors by years lived
+const oldest = inventors.sort(function(a, b) {
+      const lastInventor = a.passed - a.year;
+      const nextInventor = b.passed - b.year;
+      return lastInventor > nextInventor ? -1 : 1;
+    });
+    console.table(oldest);
+
+
+
+
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
@@ -85,4 +99,16 @@ console.log(inventorfirstandlastnames);
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick'];
 
+const sumOfCars = data.reduce(function (obj, item) {
+      if (!obj[item]) {
+        obj[item] = 0;
+      }
+      
+  obj[item]++;
+  return obj;
+
+
+}, {});
+
+console.log(sumOfCars);
    
