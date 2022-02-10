@@ -32,7 +32,9 @@ const inventorFilter = inventors.filter(inventorbornIn1500s);
 
 function inventorbornIn1500s(value) {
   
-        return value.year >= 1500 && value.year < 1600;
+  if (value.year >= 1500 && value.year < 1600) {
+    return true;
+  }
 }
     
 console.table(inventorFilter);
