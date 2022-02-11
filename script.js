@@ -50,7 +50,7 @@ return value.first + " " + value.last;
 console.log(inventorfirstandlastnames);
 
 
-// Array.prototype.sort()
+// Array.prototype.sort()  you get 1 or -1 and this bubbles up or down in array...
 // 3. Sort the inventors by birthdate, oldest to youngest
 // const ordered = inventors.sort(function(a, b) {
 //   if(a.year > b.year) {
@@ -59,7 +59,8 @@ console.log(inventorfirstandlastnames);
 //     return -1;
 //   }
 // });
-const inventorsbyage = inventors.sort(function (a, b) { return a.year - b.year });
+//Ternary operator
+const inventorsbyage = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
 console.log(inventorsbyage);
    
 
