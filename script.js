@@ -94,15 +94,27 @@ const oldest = inventors.sort(function(a, b) {
     //             .map(link => link.textContent)
     //             .filter(streetName => streetName.includes('de'));
 
+
+    
+
     // 7. sort Exercise
     // Sort the people alphabetically by last name
   
+
+
+
+
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick'];
 
 const sumOfCars = data.reduce(function (obj, item) {
+
+    //if there is no object item.
+  
+  //also while(true) - never ends!
+  
       if (!obj[item]) {
         obj[item] = 0;
       }
